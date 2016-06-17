@@ -1,10 +1,10 @@
 // BACK END LOGIC
-function Pizza (delivery, pizzaSize, protein){
+function Pizza (delivery, pizzaSize, protein, veggie){
   // this.orderName =
   this.delivery = delivery;
   this.pizzaSize = pizzaSize;
-  // this.veg = veg,
   this.protein = protein;
+  this.veggie = veggie,
   // this.extras = [],
   this.total = 10;
 }
@@ -28,34 +28,18 @@ Pizza.prototype.addDeliverytoTotal = function() {
 };
 
 Pizza.prototype.addProtein = function() {
-
-
   for (var j=0 ; j < this.protein.length ; j++ ){
     if (this.protein.length )
     this.total += 2;
   }
 };
-  // for (var prop in toppingOption) {
-  //   for (var i=0, i < this.topping.length; i++){
-  //     if (this.topping[i] == toppingOption[prop]['topping']){
-  //       total
-  //     }
-  //   }
-  // }
 
-
-
-
-
-// for (var prop in toppingList){      //Searches through list of toppings and pushes price of matching into priceOptionsArray
-//   for (var i=0; i < this.toppings.length; i++){
-//     if (this.toppings[i] == toppingList[prop]['topping']){
-//      priceOptionsArray.push(toppingList[prop]['price']);
-//     }
-//   }
-// } return priceOptionsArray;
-// }
-
+Pizza.prototype.addVeggie = function() {
+  for (var j=0 ; j < this.veggie.length ; j++ ){
+    if (this.veggie.length )
+    this.total += 1;
+  }
+};
 
 
 // FRONT END LOGIC
@@ -75,8 +59,12 @@ $(document).ready(function(){
       protein.push($(this).val());
     });
 
+    var veggie = [];
+    $.each($("input[name='veggie']:checked"), function() {
+      veggie.push($(this).val());
+    });
 
-    var newPizza = new Pizza (delivery, orderedPizzaSize, protein);
+    var newPizza = new Pizza (delivery, orderedPizzaSize, protein, veggie);
     newPizza.addSizetoTotal();
     newPizza.addDeliverytoTotal();
     newPizza.addProtein();
@@ -84,6 +72,8 @@ $(document).ready(function(){
     debugger;
     $(".results").show;
     $("#totalPrice").append(newPizza.total);
+    $("#summarySize").append(newPizza.pizzaSize);
+
     console.log(newPizza.total);
   })
 

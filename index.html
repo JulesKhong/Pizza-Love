@@ -10,17 +10,14 @@
     <title>Ma's Pizza</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-4-sm">
-
-        </div>
-        <div class="col-4-sm">
+        <div class="col-md-8">
           <form id="orderForm">
           <h4>Place an Order</h4>
           <label for="transportMethod">Takeout or Delivery?</label>
           <select id="transportMethod" class="form-control">
-            <option value="takeOut">Take Out</option>
+            <option value="takeOut">Take Out ($0)</option>
             <option value="delivery">Delivery ($5)</option>
           </select>
           <label for="firstName">First Name</label>
@@ -36,7 +33,12 @@
             <option value="large">Large ($20)</option>
           </select>
 <!-- PROTEIN -->
+          <hr>
           <div class="protein">
+            <h4>Select your toppings</h4>
+            <em>$2/protein and $1/veggie</em>
+            <hr>
+            <label>Protein</label>
             <div class="checkbox">
               <label>
               <input class="protein" id="pepperoni" type="checkbox" value="pepperoni" name="protein">
@@ -49,15 +51,60 @@
               sausage
               </label>
             </div>
+            <div class="checkbox">
+              <label>
+              <input class="protein" id="chicken" type="checkbox" value="chicken" name="protein">
+              chicken
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+              <input class="protein" id="tempeh" name="protein" type="checkbox" value="BBQ tempeh">
+              BBQ tempeh
+              </label>
+            </div>
+          </div>
+<!-- VEGETABLES -->
+          <hr>
+          <div class="veg">
+            <label>Vegetables</label>
+            <div class="checkbox">
+              <label>
+              <input class="veggie" type="checkbox" value="bell peppers" name="veggie">
+              bell peppers
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+              <input class="veggie" name="veggie" type="checkbox" value="mushrooms">
+              mushrooms
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+              <input class="veggie" type="checkbox" value="tomato" name="veggie">
+              tomato
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+              <input class="veggie" name="veggie" type="checkbox" value=" pineapple">
+              pineapple
+              </label>
+            </div>
           </div>
           <button class="btn btn-primary" type="submit" name="order">Place Order</button>
           </form>
-          <div class="results">
-            <p>Your total is: <span id="totalPrice"></span></p>
-          </div>
         </div>
-        <div class="col-4-sm">
+        <div class="col-md-4">
+          <div class="results">
+            <h4>Your order summary</h4>
+            <p>Total <span id="totalPrice"></span></p>
+            <p> One <span id="summarySize"></span> pizza with:</p>
+            <ul id="summaryToppings">
 
+            </ul>
+          </div>
         </div>
       </div>
     </div>
