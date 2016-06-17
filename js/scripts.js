@@ -68,11 +68,15 @@ $(document).ready(function(){
     newPizza.addSizetoTotal();
     newPizza.addDeliverytoTotal();
     newPizza.addProtein();
+    newPizza.addVeggie();
 
     debugger;
-    $(".results").show;
+    $(".col-md-4").show;
     $("#totalPrice").append(newPizza.total);
     $("#summarySize").append(newPizza.pizzaSize);
+
+    $("#summaryToppings").append(protein.join(", "));
+    $("#summaryToppings").append(", "+ veggie.join(", "));
 
     console.log(newPizza.total);
   })

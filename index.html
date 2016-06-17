@@ -12,7 +12,7 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-sm-6">
           <form id="orderForm">
           <h4>Place an Order</h4>
           <label for="transportMethod">Takeout or Delivery?</label>
@@ -96,15 +96,13 @@
           <button class="btn btn-primary" type="submit" name="order">Place Order</button>
           </form>
         </div>
-        <div class="col-md-4">
-          <div class="results">
+        <div class="col-sm-4">
             <h4>Your order summary</h4>
-            <p>Total <span id="totalPrice"></span></p>
+            <p>Total $<span id="totalPrice"></span></p>
             <p> One <span id="summarySize"></span> pizza with:</p>
-            <ul id="summaryToppings">
-
+            <ul>
+            <li><span id="summaryToppings"></span></li>
             </ul>
-          </div>
         </div>
       </div>
     </div>
