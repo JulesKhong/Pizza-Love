@@ -20,6 +20,12 @@ Pizza.prototype.addSizetoTotal = function(){
   }
 };
 
+Pizza.prototype.addDeliverytoTotal = function(){
+  if (this.delivery === "delivery"){
+    this.total += 5;
+  }
+};
+
 
 // FRONT END LOGIC
 
@@ -34,6 +40,8 @@ $(document).ready(function(){
     var orderedPizzaSize = $("#pizzaSize").val();
     var newPizza = new Pizza (delivery, orderedPizzaSize);
     newPizza.addSizetoTotal();
+    newPizza.addDeliverytoTotal();
+
     debugger;
     $(".results").show;
     $("#totalPrice").append(newPizza.total);
