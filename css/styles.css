@@ -2,10 +2,43 @@
   width: 60%;
 }
 
-/*.col-md-4 {
+.col-sm-4 {
   display: none;
-}*/
+  padding: 2%;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 15px;
+}
 
-/*body {
-  background-color:
-}*/
+.col-sm-5 {
+  margin-left: 10%;
+  background-color: white;
+  background-blend-mode: luminosity;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+#orderTotal {
+  font-weight: bold;
+}
+
+body {
+  background: linear-gradient(#FAF5E8, #EBE6DA);
+}
+
+h1 {
+  color: #FAF5E8;
+  margin-left: 10%;
+}
+
+.modal-backdrop {
+  background-color: #6B0204;
+}
+
+img {
+  width: 100%;
+}
+
+label {
+  margin-top: 10px;
+}

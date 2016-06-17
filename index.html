@@ -4,15 +4,18 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-    <!-- <script src="js/jquery-3.0.0.js"></script> -->
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
     <title>Ma's Pizza</title>
   </head>
   <body>
+    <nav class="navbar navbar-inverse">
+      <h1>Ma's Pizza</h1>
+    </nav>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-5">
           <form id="orderForm">
           <h4>Place an Order</h4>
           <label for="transportMethod">Takeout or Delivery?</label>
@@ -36,9 +39,7 @@
           <hr>
           <div class="protein">
             <h4>Select your toppings</h4>
-            <em>$2/protein and $1/veggie</em>
-            <hr>
-            <label>Protein</label>
+            <label>Protein ($2ea.)</label>
             <div class="checkbox">
               <label>
               <input class="protein" id="pepperoni" type="checkbox" value="pepperoni" name="protein">
@@ -67,7 +68,7 @@
 <!-- VEGETABLES -->
           <hr>
           <div class="veg">
-            <label>Vegetables</label>
+            <label>Vegetables ($1ea.)</label>
             <div class="checkbox">
               <label>
               <input class="veggie" type="checkbox" value="bell peppers" name="veggie">
@@ -97,14 +98,52 @@
           </form>
         </div>
         <div class="col-sm-4">
-            <h4>Your order summary</h4>
-            <p>Total $<span id="totalPrice"></span></p>
-            <p> One <span id="summarySize"></span> pizza with:</p>
+            <img src="img/pizza.jpg" alt="fresh pizza from Ma" />
+            <h4>Thanks for your order, <span id="customerName"></span>!</h4> <p>Review the summary below. <span id="summaryMessage"></span></p>
+            <p>One <span id="summarySize"></span> pizza with:</p>
             <ul>
-            <li><span id="summaryToppings"></span></li>
+              <li><span id="summaryToppings"></span></li>
             </ul>
+            <p id="orderTotal">Total $<span id="totalPrice"></span></p>
+            <button type="submit" id="confirmOrder" class ="btn btn-success" name="button">Confirm. Let's do this!</button>
         </div>
       </div>
+<!-- MODAL ORDER CONFIRM BELOW -->
+      <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="background">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>Thanks for your order, <span id="customerName"></span>!</h4> <p>Review your order summary below. <span id="summaryMessage"></span></p>
+                <p>One <span id="summarySize"></span> pizza with:</p>
+                <ul>
+                  <li><span id="summaryToppings"></span></li>
+                </ul>
+                <p id="orderTotal">Total $<span id="totalPrice"></span></p>
+                <button type="submit" id="confirmOrder" class ="btn btn-success" name="button">Confirm. Let's do this!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+<!-- MODAL ABOVE -->
+
+<!-- MODAL ERROR BELOW -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="background">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Oops!</h4>
+                <p>Looks like you forgot to enter your name.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- MODAL ABOVE -->
     </div>
   </body>
 </html>
